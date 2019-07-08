@@ -4,6 +4,6 @@
     <title>启动页</title>
 </head>
 <body>
-    <% response.sendRedirect("system/index"); %>
+    <% response.sendRedirect("system/login"); %>
 </body>
 </html>
