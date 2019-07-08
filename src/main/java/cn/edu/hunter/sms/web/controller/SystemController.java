@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * 系统主页控制器
@@ -25,19 +27,20 @@ import java.io.IOException;
 @RequestMapping("/system")
 public class SystemController {
 
-    @RequestMapping(path = "/index", method = RequestMethod.GET)
-    public ModelAndView index(ModelAndView mv) {
-        mv.setViewName("hello world");
-        mv.addObject("user", "it猎人工作室");
-        return mv;
+    public Map<String, String> login() {
+        Map<String, String> map = new HashMap<>();
+        return map;
     }
 
-    @RequestMapping(path = "/login", method = RequestMethod.GET)
-    public ModelAndView login(ModelAndView mv) {
-        mv.setViewName("system/login");
-        return mv;
-    }
-
+    /**
+     * 验证码控制类
+     *
+     * @param request
+     * @param response
+     * @param vl
+     * @param w
+     * @param h
+     */
     @RequestMapping(path = "/get_cpacha", method = RequestMethod.GET)
     public void getCpacha(HttpServletRequest request, HttpServletResponse response,
                           @RequestParam(value = "vl", defaultValue = "4", required = false) Integer vl,
@@ -55,4 +58,29 @@ public class SystemController {
         }
     }
 
+    /**
+     * 登录
+     *
+     * @param mv
+     * @return
+     */
+    @RequestMapping(path = "/login", method = RequestMethod.GET)
+    public ModelAndView login(ModelAndView mv) {
+        mv.setViewName("system/login");
+        return mv;
+    }
+
+
+    /**
+     * 测试第一个前端控制器
+     *
+     * @param mv
+     * @return
+     */
+    @RequestMapping(path = "/index", method = RequestMethod.GET)
+    public ModelAndView index(ModelAndView mv) {
+        mv.setViewName("hello world");
+        mv.addObject("user", "it猎人工作室");
+        return mv;
+    }
 }
