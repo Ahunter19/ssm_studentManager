@@ -29,9 +29,28 @@
     <commons-fileupload.version>1.3.1</commons-fileupload.version>
     <jdtl.version>1.2</jdtl.version>
     <servlet.version>4.0.0</servlet.version>
+    <commons-lang3.version>3.7</commons-lang3.version>
+    <jackson.version>2.9.5</jackson.version>
   </properties>
 
   <dependencies>
+
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+      <version>${jackson.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-annotations</artifactId>
+      <version>${jackson.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+      <version>${commons-lang3.version}</version>
+    </dependency>
 
     <!--servlet-->
     <dependency>
@@ -40,7 +59,6 @@
       <version>${servlet.version}</version>
       <scope>provided</scope>
     </dependency>
-
 
     <!--jstl-->
     <dependency>

@@ -34,18 +34,23 @@
         <property name="defaultEncoding" value="utf-8"/>
     </bean>
 
-    <!--后台访问拦截器
-        <mvc:interceptors>
-            <mvc:interceptor>
-                <mvc:mapping path="/**"/>
-                <mvc:exclude-mapping path="/system/login"/>
-                <mvc:exclude-mapping path="/system/get_cpacha"/>
-                <mvc:exclude-mapping path="/h-ui/**"/>
-                <mvc:exclude-mapping path="/easyui/**"/>
-                <mvc:exclude-mapping path="/home-resources/**"/>
-                <mvc:exclude-mapping path="home/**"/>
-                <bean class="cn.edu.hunter.sms.web.interceptor.LoginInterceptor"/>
-            </mvc:interceptor>
-        </mvc:interceptors>
-    -->
+    <!--Message对象转换器-->
+    <mvc:annotation-driven>
+        <mvc:message-converters>
+            <bean class="org.springframework.http.converter.StringHttpMessageConverter"/>
+            <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter"/>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
+
+    <!-- 后台访问拦截器 -->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <mvc:exclude-mapping path="/system/login"/>
+            <mvc:exclude-mapping path="/system/get_cpacha"/>
+            <mvc:exclude-mapping path="/h-ui/**"/>
+            <mvc:exclude-mapping path="/easyui/**"/>
+            <bean class="cn.edu.hunter.sms.web.interceptor.LoginInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
 </beans>

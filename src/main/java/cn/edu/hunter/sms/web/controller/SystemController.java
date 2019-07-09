@@ -1,10 +1,12 @@
 package cn.edu.hunter.sms.web.controller;
 
+import cn.edu.hunter.sms.domain.User;
+import cn.edu.hunter.sms.service.UserService;
 import cn.edu.hunter.sms.utils.CpachaUtil;
+import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.imageio.ImageIO;
@@ -27,9 +29,53 @@ import java.util.Map;
 @RequestMapping("/system")
 public class SystemController {
 
-    public Map<String, String> login() {
+    @Autowired
+    private UserService userService;
+
+    /**
+     * @description: 登录表单提交
+     * @return: Map<String, String>
+     * @author: 陈亮
+     * @time: 2019/7/8 16:23
+     */
+    @RequestMapping(path = "/login", method = RequestMethod.POST)
+    @ResponseBody
+    public Map<String, String> login(HttpServletRequest request, HttpServletResponse response,
+                                     @RequestParam(value = "username", required = true) String username,
+                                     @RequestParam(value = "password", required = true) String password) {
         Map<String, String> map = new HashMap<>();
+        if (StringUtils.isEmpty(username)) {
+            map.put("type", "error");
+            map.put("msg", "用户名不能空");
+            return map;
+        } else if (StringUtils.isEmpty(password)) {
+            map.put("type", "error");
+            map.put("msg", "密码不能为空");
+            return map;
+        }
+        User user = userService.findByUserName(username);
+        System.out.println(user);
+        if (user == null) {
+            map.put("type", "error");
+            map.put("msg", "账号或密码错误");
+            return map;
+        }
+        request.getSession().setAttribute("user", user);
+        map.put("type", "success");
+        map.put("msg", "登录成功");
         return map;
+    }
+
+    /**
+     * 登录页面
+     *
+     * @param mv
+     * @return
+     */
+    @RequestMapping(path = "/login", method = RequestMethod.GET)
+    public ModelAndView toLoginPage(ModelAndView mv) {
+        mv.setViewName("system/login");
+        return mv;
     }
 
     /**
@@ -59,28 +105,14 @@ public class SystemController {
     }
 
     /**
-     * 登录
-     *
-     * @param mv
-     * @return
+     * @description: 主页
+     * @return: ModelAndView
+     * @author: 陈亮
+     * @time: 2019/7/8 16:27
      */
-    @RequestMapping(path = "/login", method = RequestMethod.GET)
-    public ModelAndView login(ModelAndView mv) {
-        mv.setViewName("system/login");
-        return mv;
-    }
-
-
-    /**
-     * 测试第一个前端控制器
-     *
-     * @param mv
-     * @return
-     */
-    @RequestMapping(path = "/index", method = RequestMethod.GET)
+    @RequestMapping(path = "/main", method = RequestMethod.GET)
     public ModelAndView index(ModelAndView mv) {
-        mv.setViewName("hello world");
-        mv.addObject("user", "it猎人工作室");
+        mv.setViewName("system/main");
         return mv;
     }
 }

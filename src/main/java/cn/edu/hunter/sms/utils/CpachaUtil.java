@@ -14,9 +14,9 @@ import java.util.Random;
 public class CpachaUtil {
 
     private static int CODE_LEN = 4;   //验证码长度
-    private static int CODE_FONT_SIZE = 20; //验证码字体大小
-    private static int CODE_IMG_WIDTH = (CODE_FONT_SIZE + 1) * CODE_LEN + 10; //验证码图片宽度
-    private static int CODE_IMG_HEIGHT = CODE_FONT_SIZE + 12; //验证码图片高度
+    private static int CODE_FONT_SIZE = 15; //验证码字体大小
+    private static int CODE_IMG_WIDTH ; //验证码图片宽度
+    private static int CODE_IMG_HEIGHT; //验证码图片高度
     private static int CODE_DISTURBLINE = 3;   //干扰线条数
     private static final char[] code = {
             'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
@@ -76,15 +76,15 @@ public class CpachaUtil {
         //填充背景颜色
         graphics.setColor(new Color(246, 240, 250));
         graphics.fillRect(0, 0, CODE_IMG_WIDTH, CODE_IMG_HEIGHT);
-        if (drawline) {
-            drawDisturbLine(graphics);
-        }
+//        if (drawline) {
+//            drawDisturbLine(graphics);
+//        }
         //用于生成伪随机数
         Random random = new Random();
         //在图片上画验证码
         for (int i = 0; i < vcode.length(); i++) {
             //设置字体
-            graphics.setFont(new Font(fontNames[random.nextInt(fontNames.length)], fontStyles[random.nextInt(fontStyles.length)], CODE_IMG_WIDTH));
+//            graphics.setFont(new Font(fontNames[random.nextInt(fontNames.length)], fontStyles[random.nextInt(fontStyles.length)], CODE_IMG_WIDTH));
             //随机生成颜色
             graphics.setColor(getRandomColor());
             //画验证码
@@ -108,9 +108,9 @@ public class CpachaUtil {
         Graphics2D graphics = codeImage.createGraphics();
         graphics.setColor(new Color(246, 240, 250));
         graphics.fillRect(0, 0, CODE_IMG_WIDTH, CODE_IMG_HEIGHT);
-        if (drawline) {
-            drawDisturbLine(graphics);
-        }
+//        if (drawline) {
+//            drawDisturbLine(graphics);
+//        }
 
         for (int i = 0; i < vcode.length(); i++) {
             BufferedImage rotateImage = getRotateImage(vcode.charAt(i));

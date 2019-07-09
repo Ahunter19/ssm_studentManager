@@ -82,14 +82,14 @@
     </welcome-file-list>
 
     <!--报错提示页面-->
-    <error-page>
-        <error-code>404</error-code>
-        <location>/WEB-INF/errors/404.jsp</location>
-    </error-page>
+<!--    <error-page>-->
+<!--        <error-code>404</error-code>-->
+<!--        <location>/WEB-INF/views/errors/404.jsp</location>-->
+<!--    </error-page>-->
 
-    <error-page>
-        <error-code>500</error-code>
-        <location>/WEB-INF/errors/500.jsp</location>
-    </error-page>
+<!--    <error-page>-->
+<!--        <error-code>500</error-code>-->
+<!--        <location>/WEB-INF/views/errors/500.jsp</location>-->
+<!--    </error-page>-->
 
 </web-app>
