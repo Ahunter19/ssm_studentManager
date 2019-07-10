@@ -28,6 +28,7 @@ public class LoginInterceptor implements HandlerInterceptor {
             response.sendRedirect(request.getContextPath() + "/system/login");
             return false;
         }
+        System.out.println("user不为空");
         return true;
     }
 

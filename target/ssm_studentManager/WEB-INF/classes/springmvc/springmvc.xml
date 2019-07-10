@@ -48,8 +48,8 @@
             <mvc:mapping path="/**"/>
             <mvc:exclude-mapping path="/system/login"/>
             <mvc:exclude-mapping path="/system/get_cpacha"/>
-            <mvc:exclude-mapping path="/h-ui/**"/>
-            <mvc:exclude-mapping path="/easyui/**"/>
+            <mvc:exclude-mapping path="/static/h-ui/**"/>
+            <mvc:exclude-mapping path="/static/easyui/**"/>
             <bean class="cn.edu.hunter.sms.web.interceptor.LoginInterceptor"/>
         </mvc:interceptor>
     </mvc:interceptors>

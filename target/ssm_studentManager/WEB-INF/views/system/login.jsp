@@ -13,7 +13,8 @@
     <!-- 引入JS -->
     <script type="text/javascript" src="${pageContext.request.contextPath}/static/easyui/jquery.min.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/static/easyui/jquery.easyui.min.js"></script>
-    <script type="text/javascript" src="${pageContext.request.contextPath}/static/h-ui/lib/icheck/jquery.icheck.min.js"></script>
+    <script type="text/javascript"
+            src="${pageContext.request.contextPath}/static/h-ui/lib/icheck/jquery.icheck.min.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/static/h-ui/js/H-ui.js"></script>
 
     <!-- 页面事件 -->
@@ -80,31 +81,6 @@
                            class="input-text radius size-L"/>
                 </div>
             </div>
-            <!-- 验证码 -->
-<%--            <div class="row cl">--%>
-<%--                <label class="form-label col-3"><i class="Hui-iconfont">&#xe647;</i></label>--%>
-<%--                <div class="formControls col-8">--%>
-<%--                    <input id="verifiCode" class="input-text radius size-L" name="verifiCode" type="text"--%>
-<%--                           placeholder="验证码"--%>
-<%--                           style="width: 200px;">--%>
-<%--                    <img title="点击图片切换验证码哟 ~" id="vcodeImg" src="get_cpacha" alt="#">--%>
-<%--                </div>--%>
-<%--            </div>--%>
-<%--            <!-- 用户类型 -->--%>
-<%--            <div class="mt-20 skin-minimal" style="text-align: center;">--%>
-<%--                <div class="radio-box">--%>
-<%--                    <input type="radio" id="radio-1" name="userType" value="1"/>--%>
-<%--                    <label for="radio-3">管理员</label>--%>
-<%--                </div>--%>
-<%--                <div class="radio-box">--%>
-<%--                    <input type="radio" id="radio-3" name="userType" value="3"/>--%>
-<%--                    <label for="radio-2">老师</label>--%>
-<%--                </div>--%>
-<%--                <div class="radio-box">--%>
-<%--                    <input type="radio" id="radio-2" name="userType" checked value="2"/>--%>
-<%--                    <label for="radio-1">学生</label>--%>
-<%--                </div>--%>
-<%--            </div>--%>
             <!-- 登录按钮 -->
             <div class="row">
                 <div class="formControls col-8 col-offset-3">

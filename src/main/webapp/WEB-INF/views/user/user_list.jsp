@@ -30,7 +30,7 @@
                 collapsible: false,//是否可折叠
                 fit: true,//自动大小
                 method: "post",
-                url: "getAdminList?t" + new Date().getTime(),
+                url: "getUserList?t" + new Date().getTime(),
                 idField: 'id',
                 singleSelect: false,//是否单选
                 rownumbers: true,//行号
@@ -41,11 +41,8 @@
                 columns: [[
                     {field: 'chk', checkbox: true, width: 50},
                     {field: 'id', title: 'ID', width: 100, sortable: true},
-                    {field: 'name', title: '姓名', width: 150},
-                    {field: 'gender', title: '性别', width: 100},
-                    {field: 'email', title: '邮箱', width: 200},
-                    {field: 'telephone', title: '电话', width: 200},
-                    {field: 'address', title: '地址', width: 300}
+                    {field: 'username', title: '用户名', width: 150},
+                    {field: 'password', title: '密码', width: 150}
                 ]],
                 toolbar: "#toolbar"//工具栏
             });
@@ -136,11 +133,11 @@
                                 var data = $("#addForm").serialize();//序列化表单信息
                                 $.ajax({
                                     type: "post",
-                                    url: "addAdmin",
+                                    url: "addUser",
                                     data: data,
                                     dataType: 'json',
                                     success: function (data) {
-                                        if (data.success) {
+                                        if ("success" == data.type) {
                                             $("#addDialog").dialog("close"); //关闭窗口
                                             $('#dataList').datagrid("reload");//重新刷新页面数据
                                             $.messager.alert("消息提醒", "添加成功啦!", "info");
@@ -171,8 +168,8 @@
             //设置编辑管理员信息窗口
             $("#editDialog").dialog({
                 title: "修改管理员信息",
-                width: 660,
-                height: 380,
+                width: 380,
+                height: 200,
                 iconCls: "icon-edit",
                 modal: true,
                 collapsible: false,
@@ -193,18 +190,19 @@
                                 var data = $("#editForm").serialize();//序列化表单信息
                                 $.ajax({
                                     type: "post",
-                                    url: "editAdmin?t=" + new Date().getTime(),
+                                    url: "edit?t=" + new Date().getTime(),
                                     data: data,
                                     dataType: 'json',
                                     success: function (data) {
-                                        if (data.success) {
+                                        if (data.type == "success") {
+                                            $.messager.alert("消息提醒", "修改成功啦 !", "info");
                                             //关闭窗口
                                             $("#editDialog").dialog("close");
                                             //重新刷新页面数据
                                             $('#dataList').datagrid("reload");
                                             $('#dataList').datagrid("uncheckAll");
                                             //用户提示
-                                            $.messager.alert("消息提醒", "修改成功啦 !", "info");
+
                                         } else {
                                             $.messager.alert("消息提醒", data.msg, "warning");
                                         }
@@ -231,15 +229,10 @@
                 onBeforeOpen: function () {
                     var selectRow = $("#dataList").datagrid("getSelected");
                     $("#edit_id").val(selectRow.id);//需根据id更新用户信息
-                    $("#edit_name").textbox('setValue', selectRow.name);
-                    $("#edit_gender").textbox('setValue', selectRow.gender);
-                    $("#edit_telephone").textbox('setValue', selectRow.telephone);
-                    $("#edit_email").textbox('setValue', selectRow.email);
-                    $("#edit_address").textbox('setValue', selectRow.address);
+                    $("#edit_username").textbox('setValue', selectRow.username);
+                    $("#edit_password").textbox('setValue', selectRow.password);
                     //通过获取头像路径来显示该管理员的头像
                     $("#edit-portrait").attr('src', selectRow.portrait_path);
-                    //初始化头像路径(已优化:在执行SQL语句时通过判断头像路径是否为空,为空则代表用户并未修改头像)
-                    //$("#edit_portrait-path").val(selectRow.portrait_path);
                 }
             });
 
@@ -249,50 +242,14 @@
                     username: $('#search-username').val()//获取管理员姓名
                 });
             });
-
-            //添加信息窗口中上传头像的按钮事件
-            $("#add-upload-btn").click(function () {
-                if ($("#choose-portrait").filebox("getValue") === '') {
-                    $.messager.alert("提示", "请选择图片!", "warning");
-                    return;
-                }
-                $("#add-uploadForm").submit();//提交表单
-            });
-
-            //修改信息窗口中上传头像的按钮事件
-            $("#edit-upload-btn").click(function () {
-                if ($("#edit-choose-portrait").filebox("getValue") === '') {
-                    $.messager.alert("提示", "请选择图片!", "warning");
-                    return;
-                }
-                $("#edit-uploadForm").submit();
-            });
-
         });
-
-        //上传头像按钮事件
-        function uploaded() {
-            var data = $(window.frames["photo_target"].document).find("body pre").text();
-            data = JSON.parse(data);//将data装换为JSON对象
-            if (data.success) {
-                $.messager.alert("提示", "图片上传成功!", "info");
-                //切换头像
-                $("#add-portrait").attr("src", data.portrait_path);
-                $("#edit-portrait").attr("src", data.portrait_path);
-                //将头像路径存储到管理员信息表单中(利用从用户信息中读取头像路径来显示头像)
-                $("#add_portrait-path").val(data.portrait_path);
-                $("#edit_portrait-path").val(data.portrait_path);
-            } else {
-                $.messager.alert("提示", data.msg, "warning");
-            }
-        }
-
     </script>
 </head>
 <body>
 
 <!-- 管理员列表信息 -->
-<table id="dataList" cellspacing="0" cellpadding="0"></table>
+<table id="dataList" cellspacing="0" cellpadding="0">
+</table>
 
 <!-- 工具栏 -->
 <div id="toolbar">
@@ -310,7 +267,7 @@
         <div style="float: left;" class="datagrid-btn-separator"></div>
         <a id="edit" href="javascript:" class="easyui-linkbutton"
            data-options="iconCls:'icon-user-teacher',plain:true">管理员姓名</a>
-        <input id="search-username" class="easyui-textbox" name="teacherName"/>
+        <input id="search-username" class="easyui-textbox" name="username"/>
         <a id="search-btn" href="javascript:" class="easyui-linkbutton"
            data-options="iconCls:'icon-search',plain:true">搜索</a>
     </div>
@@ -321,16 +278,6 @@
 <div id="addDialog" style="padding: 15px 0 0 45px;">
     <!-- 设置添加头像功能 -->
     <div style="float: right; margin: 10px 25px 0 0; width: 250px; border: 1px solid #EEF4FF" id="add-photo">
-        <img id="add-portrait" alt="照片" style="max-width: 250px; max-height: 300px;" title="照片"
-             src="${pageContext.request.contextPath}/image/portrait/default_admin_portrait.png"/>
-        <!-- 头像信息表单 -->
-        <form id="add-uploadForm" method="post" enctype="multipart/form-data" action="uploadPhoto"
-              target="photo_target">
-            <input id="choose-portrait" class="easyui-filebox" name="photo" data-options="prompt:'选择照片'"
-                   style="width:200px;">
-            <input id="add-upload-btn" class="easyui-linkbutton" style="width: 50px; height: 24px;;float:right;"
-                   type="button" value="上传"/>
-        </form>
     </div>
     <!-- 管理员信息表单 -->
     <form id="addForm" method="post" action="#">
@@ -341,47 +288,14 @@
                 <td>姓名</td>
                 <td colspan="4">
                     <input id="add_name" style="width: 200px; height: 30px;" class="easyui-textbox"
-                           type="text" name="name" data-options="required:true, missingMessage:'请填写姓名哟~'"/>
+                           type="text" name="username" data-options="required:true, missingMessage:'请填写姓名哟~'"/>
                 </td>
             </tr>
-            <tr>
-                <td>性别</td>
-                <td colspan="4">
-                    <select id="add_gender" class="easyui-combobox"
-                            data-options="editable: false, panelHeight: 50, width: 60, height: 30,
-                            required:true, missingMessage:'请填写性别哟~'" name="gender">
-                        <option value="男">男</option>
-                        <option value="女">女</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>密码</td>
-                <td colspan="4"><input id="add_password" style="width: 200px; height: 30px;" class="easyui-textbox"
-                                       type="password" name="password"
-                                       data-options="required:true, missingMessage:'请填写自定义密码哟~'"/>
-                </td>
-            </tr>
-            <tr>
-                <td>邮箱</td>
-                <td colspan="4"><input id="add_email" style="width: 200px; height: 30px;" class="easyui-textbox"
-                                       type="text" name="email" validType="email"
-                                       data-options="required:true, missingMessage:'请填写邮箱地址哟~'"/>
-                </td>
-            </tr>
-            <tr>
-                <td>电话</td>
-                <td colspan="4"><input id="add_telephone" style="width: 200px; height: 30px;" class="easyui-textbox"
-                                       type="text" name="telephone" validType="mobile"
-                                       data-options="required:true, missingMessage:'请填写联系方式哟~'"/>
-                </td>
-            </tr>
-            <tr>
-                <td>住址</td>
-                <td colspan="4"><input id="add_address" style="width: 200px; height: 30px;" class="easyui-textbox"
-                                       type="text" name="address"
-                                       data-options="required:true, missingMessage:'请填家庭住址哟~'"/>
-                </td>
+            <td>密码</td>
+            <td colspan="4"><input id="add_password" style="width: 200px; height: 30px;" class="easyui-textbox"
+                                   type="password" name="password"
+                                   data-options="required:true, missingMessage:'请填写自定义密码哟~'"/>
+            </td>
             </tr>
         </table>
     </form>
@@ -390,62 +304,21 @@
 
 <!-- 修改信息窗口 -->
 <div id="editDialog" style="padding: 15px 0 0 45px;">
-    <!-- 设置修改头像功能 -->
-    <div style="float: right; margin: 10px 25px 0 0; width: 250px; border: 1px solid #EEF4FF" id="edit-photo">
-        <img id="edit-portrait" alt="照片" style="max-width: 250px; max-height: 300px;" title="照片"
-             src="${pageContext.request.contextPath}/image/portrait/default_admin_portrait.png"/>
-        <!-- 头像信息表单 -->
-        <form id="edit-uploadForm" method="post" enctype="multipart/form-data" action="uploadPhoto"
-              target="photo_target">
-            <input id="edit-choose-portrait" class="easyui-filebox" name="photo" data-options="prompt:'选择照片'"
-                   style="width:200px;">
-            <input id="edit-upload-btn" class="easyui-linkbutton" style="width: 50px; height: 24px;;float:right;"
-                   type="button" value="上传"/>
-        </form>
-    </div>
     <!-- 管理员信息表单 -->
     <form id="editForm" method="post" action="#">
         <!-- 获取被修改信息的管理员id -->
         <input type="hidden" id="edit_id" name="id"/>
-        <table id="editTable" border=0 style="width:260px; table-layout:fixed;" cellpadding="8">
-            <!-- 存储所上传的头像路径 -->
-            <input id="edit_portrait-path" type="hidden" name="portrait_path"/>
+        <table id="editTable" border=0 style="width:160px; table-layout:fixed;" cellpadding="8">
             <tr>
                 <td>姓名</td>
-                <td><input id="edit_name" style="width: 200px; height: 30px;" class="easyui-textbox" type="text"
-                           name="name" data-options="required:true, missingMessage:'请填写姓名哟~'"/>
+                <td><input id="edit_username" style="width: 200px; height: 30px;" class="easyui-textbox" type="text"
+                           name="username" data-options="required:true, missingMessage:'请填写用户名'"/>
                 </td>
             </tr>
             <tr>
-                <td>性别</td>
-                <td>
-                    <select id="edit_gender" class="easyui-combobox"
-                            data-options="editable: false, panelHeight: 50, width: 60, height: 30"
-                            name="gender">
-                        <option value="男">男</option>
-                        <option value="女">女</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>邮箱</td>
-                <td colspan="4"><input id="edit_email" style="width: 200px; height: 30px;" class="easyui-textbox"
-                                       type="text" name="email" validType="email"
-                                       data-options="required:true, missingMessage:'请填写邮箱地址哟~'"/>
-                </td>
-            </tr>
-            <tr>
-                <td>电话</td>
-                <td><input id="edit_telephone" style="width: 200px; height: 30px;" class="easyui-textbox" type="text"
-                           name="telephone" validType="mobile"
-                           data-options="required:true, missingMessage:'请填写联系方式哟~'"/>
-                </td>
-            </tr>
-            <tr>
-                <td>住址</td>
-                <td colspan="4"><input id="edit_address" style="width: 200px; height: 30px;" class="easyui-textbox"
-                                       type="text" name="address"
-                                       data-options="required:true, missingMessage:'请填家庭住址哟~'"/>
+                <td>密码</td>
+                <td><input id="edit_password" style="width: 200px; height: 30px;" class="easyui-textbox" type="text"
+                           name="password" data-options="required:true, missingMessage:'请填写密码'"/>
                 </td>
             </tr>
         </table>

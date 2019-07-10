@@ -134,7 +134,7 @@
                 </c:choose>
         	</span>
             <%-- 从Session中获取登录用户的用户名	--%>
-        	<span style="color:red; font-weight:bold;">${userInfo.name}</span>&nbsp;&nbsp;&nbsp;&nbsp;
+        	<span style="color:red; font-weight:bold;">${user.username}</span>&nbsp;&nbsp;&nbsp;&nbsp;
         	<a href="loginOut" id="loginOut" style="color: darkgrey;" class="easyui-linkbutton"
                data-options="iconCls:'icon-exit',plain:true">
                 [安全退出]
