@@ -17,6 +17,14 @@ import java.util.Map;
 public interface UserDao {
 
     /**
+     * @description: 删除/批量删除用户
+     * @return: Integer
+     * @author: 陈亮
+     * @time: 2019/7/11 14:17
+     */
+    Integer deleteUser(String ids);
+
+    /**
      * @description: 修改用户信息
      * @return: List<User>
      * @author: 陈亮

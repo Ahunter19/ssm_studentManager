@@ -90,11 +90,11 @@
                         if (r) {
                             $.ajax({
                                 type: "post",
-                                url: "deleteAdmin?t" + new Date().getTime(),
+                                url: "delete?t" + new Date().getTime(),
                                 data: {ids: ids},
                                 dataType: 'json',
                                 success: function (data) {
-                                    if (data.success) {
+                                    if (data.type == "success") {
                                         $.messager.alert("消息提醒", "删除成功啦!", "info");
                                         $("#dataList").datagrid("reload");//刷新表格
                                         $("#dataList").datagrid("uncheckAll");//取消勾选当前页所有的行

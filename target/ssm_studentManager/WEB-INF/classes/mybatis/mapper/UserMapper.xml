@@ -16,4 +16,7 @@
     <update id="editUser" parameterType="User">
         UPDATE `user` SET username = #{username},password = #{password} WHERE id = #{id}
     </update>
+  <delete id="deleteUser" parameterType="String">
+      DELETE FROM `user` WHERE id IN (${value})
+  </delete>
 </mapper>

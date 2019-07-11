@@ -30,6 +30,32 @@ public class UserController {
     public UserService userService;
 
     /**
+     * @description: 删除/批量删除用户
+     * @return: Map<String, String>
+     * @author: 陈亮
+     * @time: 2019/7/11 14:24
+     */  
+    @RequestMapping(value = "/delete", method = RequestMethod.POST)
+    @ResponseBody
+    public Map<String, String> delete(@RequestParam(value = "ids[]", required = false) Integer[] ids) {
+        System.out.println("delete()方法执行了...");
+        Map<String, String> ret = new HashMap<>();
+        String str = "";
+        for (Integer id : ids) {
+            str += id + ",";
+        }
+        String substring = str.substring(0, str.length() - 1);
+        System.out.println(substring);
+        if(userService.deleteUser(substring) <= 0){
+            ret.put("type", "error");
+            ret.put("msg", "删除失败");
+        }
+        ret.put("type", "success");
+        ret.put("msg", "删除成功");
+        return ret;
+    }
+
+    /**
      * @description: 修改用户信息
      * @return: Map<String, Object>
      * @author: 陈亮
@@ -56,7 +82,7 @@ public class UserController {
         }
         User existUser = userService.findByUserName(user.getUsername());
         if (existUser != null) {
-            if (user.getId() != existUser.getId()){
+            if (user.getId() != existUser.getId()) {
                 ret.put("type", "error");
                 ret.put("msg", "该用户名已经存在！");
                 return ret;
@@ -71,7 +97,6 @@ public class UserController {
         ret.put("msg", "修改成功！");
         return ret;
     }
-
 
     /**
      * @description: 获取用户列表
@@ -148,6 +173,5 @@ public class UserController {
         mv.setViewName("user/user_list");
         return mv;
     }
-
 
 }

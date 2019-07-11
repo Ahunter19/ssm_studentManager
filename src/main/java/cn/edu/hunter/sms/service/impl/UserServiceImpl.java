@@ -23,6 +23,17 @@ public class UserServiceImpl implements UserService {
     private UserDao userDao;
 
     /**
+     * @description: 删除/批量删除用户
+     * @return: Integer
+     * @author: 陈亮
+     * @time: 2019/7/11 14:17
+     */
+    @Override
+    public Integer deleteUser(String ids) {
+        return userDao.deleteUser(ids);
+    }
+
+    /**
      * @description: 修改用户信息
      * @return: List<User>
      * @author: 陈亮
