@@ -28,16 +28,16 @@
     <script type="text/javascript">
         //加载页面函数
         $(function () {
-            //消息推送窗口
-            $.messager.show({
-                width: 360,
-                height: 50,
-                title: '推送',
-                msg: '很开心你能体现这个小小小项目哟 ! （づ￣3￣）づ╭❤～ ',
-                showSpeed: 1500,
-                timeout: 0,
-                showType: 'slide'
-            });
+            // //消息推送窗口
+            // $.messager.show({
+            //     width: 360,
+            //     height: 50,
+            //     title: '推送',
+            //     msg: '很开心你能体现这个小小小项目哟 ! （づ￣3￣）づ╭❤～ ',
+            //     showSpeed: 1500,
+            //     timeout: 0,
+            //     showType: 'slide'
+            // });
         });
         //设置系统功能菜单栏
         var _menus = {
@@ -47,14 +47,14 @@
                     "menus": [
                         {
                             "menuid": "21",
-                            "menuname": "学生列表",
+                            "menuname": "用户列表",
                             "icon": "icon-student",
                             "url": "../user/list"
                         }
                     ]
                 },
-                <%-- 通过JSTL设置用户查看权限: 仅管理员和教师可以查看教师列表信息 --%>
-                <c:if test="${userType == 1 || userType == 3}">
+<%--                &lt;%&ndash; 通过JSTL设置用户查看权限: 仅年级和教师可以查看教师列表信息 &ndash;%&gt;--%>
+<%--                <c:if test="${userType == 1 || userType == 3}">--%>
                 {
                     "menuid": "2", "icon": "", "menuname": "教师信息管理",
                     "menus": [
@@ -66,9 +66,9 @@
                         }
                     ]
                 },
-                </c:if>
-                <%-- 通过JSTL设置用户查看权限:  仅管理员可以查看年级,班级,管理员列表信息 --%>
-                <c:if test="${userType == 1}">
+<%--                </c:if>--%>
+<%--                &lt;%&ndash; 通过JSTL设置用户查看权限:  仅年级可以查看年级,班级,年级列表信息 &ndash;%&gt;--%>
+<%--                <c:if test="${userType == 1}">--%>
                 {
                     "menuid": "3", "icon": "", "menuname": "班级信息管理",
                     "menus": [
@@ -87,7 +87,7 @@
                             "menuid": "24",
                             "menuname": "年级列表",
                             "icon": "icon-grade",
-                            "url": "../grade/goGradeListView"
+                            "url": "../grade/list"
                         }
                     ]
                 },
@@ -96,13 +96,13 @@
                     "menus": [
                         {
                             "menuid": "25",
-                            "menuname": "管理员列表",
+                            "menuname": "年级列表",
                             "icon": "icon-admin",
                             "url": "../admin/goAdminListView"
                         }
                     ]
                 },
-                </c:if>
+<%--                </c:if>--%>
                 {
                     "menuid": "6", "icon": "", "menuname": "个人信息管理",
                     "menus": [
@@ -128,7 +128,7 @@
         	<span style="color:blue;" class="easyui-linkbutton" data-options="iconCls:'icon-user',plain:true">
                 <!-- 获取用户登录类型 -->
         		<c:choose>
-                    <c:when test="${userType==1 }">管理员 : </c:when>
+                    <c:when test="${userType==1 }">年级 : </c:when>
                     <c:when test="${userType==2 }">学生 : </c:when>
                     <c:when test="${userType==3}">教师 : </c:when>
                 </c:choose>

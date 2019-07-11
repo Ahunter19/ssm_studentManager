@@ -71,14 +71,14 @@
             <div class="row cl">
                 <label class="form-label col-3"><i class="Hui-iconfont">&#xe60a;</i></label>
                 <div class="formControls col-8">
-                    <input id="username" name="username" type="text" placeholder="账户" class="input-text radius size-L"/>
+                    <input id="username" name="username" type="text" placeholder="账户" class="input-text radius size-L" value="root"/>
                 </div>
             </div>
             <div class="row cl">
                 <label class="form-label col-3"><i class="Hui-iconfont">&#xe63f;</i></label>
                 <div class="formControls col-8">
                     <input id="password" name="password" type="password" placeholder="密码"
-                           class="input-text radius size-L"/>
+                           class="input-text radius size-L" value="1"/>
                 </div>
             </div>
             <!-- 登录按钮 -->

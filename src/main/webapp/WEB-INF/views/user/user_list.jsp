@@ -5,7 +5,7 @@
 <html>
 <head>
     <meta charset="UTF-8" content="#">
-    <title>管理员信息管理页面</title>
+    <title>年级信息管理页面</title>
     <!-- 引入CSS -->
     <link rel="stylesheet" type="text/css"
           href="${pageContext.request.contextPath}/static/easyui/themes/default/easyui.css">
@@ -86,7 +86,7 @@
                     $(selectRows).each(function (i, row) {
                         ids[i] = row.id;//将预删除行的id封装成一个数组
                     });
-                    $.messager.confirm("消息提醒", "删除后将无法恢复该管理员信息! 确定继续?", function (r) {
+                    $.messager.confirm("消息提醒", "删除后将无法恢复该年级信息! 确定继续?", function (r) {
                         if (r) {
                             $.ajax({
                                 type: "post",
@@ -108,9 +108,9 @@
                 }
             });
 
-            //设置添加管理员信息窗口
+            //设置添加年级信息窗口
             $("#addDialog").dialog({
-                title: "添加管理员",
+                title: "添加用户",
                 width: 660,
                 height: 380,
                 iconCls: "icon-add?t" + new Date().getTime(),
@@ -165,9 +165,9 @@
                 ]
             });
 
-            //设置编辑管理员信息窗口
+            //设置编辑年级信息窗口
             $("#editDialog").dialog({
-                title: "修改管理员信息",
+                title: "修改用户信息",
                 width: 380,
                 height: 200,
                 iconCls: "icon-edit",
@@ -231,15 +231,15 @@
                     $("#edit_id").val(selectRow.id);//需根据id更新用户信息
                     $("#edit_username").textbox('setValue', selectRow.username);
                     $("#edit_password").textbox('setValue', selectRow.password);
-                    //通过获取头像路径来显示该管理员的头像
+                    //通过获取头像路径来显示该年级的头像
                     $("#edit-portrait").attr('src', selectRow.portrait_path);
                 }
             });
 
-            //管理员姓名搜索按钮监听事件(将管理员姓名返回给Controller)
+            //用户姓名搜索按钮监听事件(将年级姓名返回给Controller)
             $("#search-btn").click(function () {
                 $('#dataList').datagrid('load', {
-                    username: $('#search-username').val()//获取管理员姓名
+                    username: $('#search-username').val()//获取年级姓名
                 });
             });
         });
@@ -247,13 +247,13 @@
 </head>
 <body>
 
-<!-- 管理员列表信息 -->
+<!-- 用户名列表信息 -->
 <table id="dataList" cellspacing="0" cellpadding="0">
 </table>
 
 <!-- 工具栏 -->
 <div id="toolbar">
-    <%-- 通过JSTL设置用户操作权限: 将添加和删除按钮设置为仅管理员或教师可见	 --%>
+    <%-- 通过JSTL设置用户操作权限: 将添加和删除按钮设置为仅年级或教师可见	 --%>
     <div style="float: left;"><a id="add" href="javascript:" class="easyui-linkbutton"
                                  data-options="iconCls:'icon-add',plain:true">添加</a></div>
     <div style="float: left;" class="datagrid-btn-separator"></div>
@@ -262,11 +262,11 @@
     <div style="float: left;" class="datagrid-btn-separator"></div>
     <div style="float: left;"><a id="delete" href="javascript:" class="easyui-linkbutton"
                                  data-options="iconCls:'icon-some-delete',plain:true">删除</a></div>
-    <!-- 管理员姓名搜索域 -->
+    <!-- 年级姓名搜索域 -->
     <div style="margin-left: 10px;">
         <div style="float: left;" class="datagrid-btn-separator"></div>
         <a id="edit" href="javascript:" class="easyui-linkbutton"
-           data-options="iconCls:'icon-user-teacher',plain:true">管理员姓名</a>
+           data-options="iconCls:'icon-user-teacher',plain:true">用户名</a>
         <input id="search-username" class="easyui-textbox" name="username"/>
         <a id="search-btn" href="javascript:" class="easyui-linkbutton"
            data-options="iconCls:'icon-search',plain:true">搜索</a>
@@ -276,14 +276,9 @@
 
 <!-- 添加信息窗口 -->
 <div id="addDialog" style="padding: 15px 0 0 45px;">
-    <!-- 设置添加头像功能 -->
-    <div style="float: right; margin: 10px 25px 0 0; width: 250px; border: 1px solid #EEF4FF" id="add-photo">
-    </div>
-    <!-- 管理员信息表单 -->
+    <!-- 年级信息表单 -->
     <form id="addForm" method="post" action="#">
         <table id="addTable" border=0 style="width:200px; table-layout:fixed;" cellpadding="6">
-            <!-- 存储所上传的头像路径 -->
-            <input id="add_portrait-path" type="hidden" name="portrait_path"/>
             <tr>
                 <td>姓名</td>
                 <td colspan="4">
@@ -304,9 +299,9 @@
 
 <!-- 修改信息窗口 -->
 <div id="editDialog" style="padding: 15px 0 0 45px;">
-    <!-- 管理员信息表单 -->
+    <!-- 年级信息表单 -->
     <form id="editForm" method="post" action="#">
-        <!-- 获取被修改信息的管理员id -->
+        <!-- 获取被修改信息的年级id -->
         <input type="hidden" id="edit_id" name="id"/>
         <table id="editTable" border=0 style="width:160px; table-layout:fixed;" cellpadding="8">
             <tr>

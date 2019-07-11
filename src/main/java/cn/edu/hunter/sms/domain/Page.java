@@ -35,4 +35,13 @@ public class Page {
     public void setOffset(int offset) {
         this.offset = offset;
     }
+
+    @Override
+    public String toString() {
+        return "Page{" +
+                "page=" + page +
+                ", rows=" + rows +
+                ", offset=" + offset +
+                '}';
+    }
 }
