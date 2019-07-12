@@ -22,6 +22,21 @@ public class ClazzServiceImpl implements ClazzService {
     @Autowired
     private ClazzDao clazzDao;
 
+    @Override
+    public int deleteClazz(String ids) {
+        return clazzDao.deleteClazz(ids);
+    }
+
+    /**
+     * 添加班级信息
+     * @param clazz
+     * @return
+     */
+    @Override
+    public int addClazz(Clazz clazz) {
+        return clazzDao.addClazz(clazz);
+    }
+
     /**
      * 获取班级信息列表
      * @param queryMap

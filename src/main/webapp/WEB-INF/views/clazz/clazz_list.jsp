@@ -134,7 +134,7 @@
                                 var data = $("#addForm").serialize();//序列化表单信息
                                 $.ajax({
                                     type: "post",
-                                    url: "addGrade",
+                                    url: "addClazz",
                                     data: data,
                                     dataType: 'json',
                                     success: function (data) {
@@ -155,7 +155,7 @@
 
             //设置编辑年级信息窗口
             $("#editDialog").dialog({
-                title: "修改年级信息",
+                title: "修改班级信息",
                 width: 380,
                 height: 200,
                 iconCls: "icon-edit",
@@ -178,7 +178,7 @@
                                 var data = $("#editForm").serialize();//序列化表单信息
                                 $.ajax({
                                     type: "post",
-                                    url: "edit?t=" + new Date().getTime(),
+                                    url: "editClazz?t=" + new Date().getTime(),
                                     data: data,
                                     dataType: 'json',
                                     success: function (data) {
@@ -203,7 +203,7 @@
                 onBeforeOpen: function () {
                     var selectRow = $("#dataList").datagrid("getSelected");
                     $("#edit_id").val(selectRow.id);//需根据id更新用户信息
-                    $("#edit_clazzId").textbox('setValue', selectRow.clazzId);
+                    $("#edit_gradeId").textbox('setValue', selectRow.gradeId);
                     $("#edit_name").textbox('setValue', selectRow.name);
                     $("#edit_remark").textbox('setValue', selectRow.remark);
                 }
@@ -265,7 +265,7 @@
                     <select id="add_gradeId" style="width: 200px; height: 30px;" class="easyui-checkbox" type="text"
                             name="gradeId" data-options="required:true, missingMessage:'请选择所属年级~'">
                         <c:forEach items="${gradeList}" var="temp">
-                            <option id="${temp.id}">${temp.name}</option>
+                            <option value="${temp.id}">${temp.name}</option>
                         </c:forEach>
                     </select>
                 </td>
@@ -295,6 +295,17 @@
                 </td>
             </tr>
             <tr>
+                <td>所属年级</td>
+                <td>
+                    <select id=edit_gradeId" style="width: 200px; height: 30px;" class="easyui-checkbox" type="text"
+                            name="gradeId" data-options="required:true, missingMessage:'请选择所属年级~'">
+                        <c:forEach items="${gradeList}" var="temp">
+                            <option value="${temp.id}">${temp.name}</option>
+                        </c:forEach>
+                    </select>
+                </td>
+            </tr>
+            <tr>
                 <td>备注</td>
                 <td><input id="edit_remark" style="width: 200px; height: 30px;" class="easyui-textbox" type="text"
                            name="remark"/>
@@ -306,6 +317,5 @@
 
 <!-- 表单处理 -->
 <iframe id="photo_target" name="photo_target" onload="uploaded(this)"></iframe>
-
 </body>
 </html>

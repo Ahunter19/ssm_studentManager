@@ -25,7 +25,6 @@ public class StringUtil {
         if (!"".equals(str)) {
             str = str.substring(0, str.length() - spilt.length());
         }
-        System.out.println(str);
         return str;
     }
 }

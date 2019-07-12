@@ -12,8 +12,8 @@ public class Clazz {
     private String name;
     private String remark;
 
-//    //与年级属一对一的关系
-//    private Grade grade;
+    //与年级属一对一的关系
+    private Integer gradeId;
 
     public Integer getId() {
         return id;
@@ -39,13 +39,13 @@ public class Clazz {
         this.remark = remark;
     }
 
-//    public Grade getGrade() {
-//        return grade;
-//    }
-//
-//    public void setGrade(Grade grade) {
-//        this.grade = grade;
-//    }
+    public Integer getGradeId() {
+        return gradeId;
+    }
+
+    public void setGradeId(Integer gradeId) {
+        this.gradeId = gradeId;
+    }
 
     @Override
     public String toString() {
@@ -53,6 +53,7 @@ public class Clazz {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", remark='" + remark + '\'' +
+                ", gradeId=" + gradeId +
                 '}';
     }
 }

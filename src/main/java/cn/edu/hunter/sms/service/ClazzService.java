@@ -17,6 +17,18 @@ import java.util.Map;
 public interface ClazzService {
 
     /**
+     * 删除班级信息
+     * @param ids
+     * @return int
+     */
+    int deleteClazz(String ids);
+
+    /**
+     * 添加班级
+     */
+    int addClazz(Clazz clazz);
+
+    /**
      * 查询所有的班级信息
      *
      * @return List<Clazz>
