@@ -4,6 +4,9 @@
     <select id="findGradeByName" parameterType="String" resultType="Grade">
         SELECT * FROM `grade` WHERE `name` = #{name}
     </select>
+    <select id="findAll" resultType="Grade">
+        SELECT * FROM `grade`
+    </select>
     <select id="getGradeList" parameterType="Map" resultType="Grade">
         SELECT * FROM `grade` WHERE `name` LIKE #{name} LIMIT #{offset},#{pageSize}
     </select>

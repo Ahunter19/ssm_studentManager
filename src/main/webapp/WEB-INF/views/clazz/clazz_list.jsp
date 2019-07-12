@@ -1,11 +1,11 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<!-- use EL-Expression-->
 <%@ page isELIgnored="false" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
     <meta charset="UTF-8" content="#">
-    <title>年级信息管理页面</title>
+    <title>班级信息管理页面</title>
     <!-- 引入CSS -->
     <link rel="stylesheet" type="text/css"
           href="${pageContext.request.contextPath}/static/easyui/themes/default/easyui.css">
@@ -30,7 +30,7 @@
                 collapsible: false,//是否可折叠
                 fit: true,//自动大小
                 method: "post",
-                url: "getGradeList?t" + new Date().getTime(),
+                url: "getClazzList?t" + new Date().getTime(),
                 idField: 'id',
                 singleSelect: false,//是否单选
                 rownumbers: true,//行号
@@ -41,7 +41,8 @@
                 columns: [[
                     {field: 'chk', checkbox: true, width: 50},
                     {field: 'id', title: 'ID', width: 100, sortable: true},
-                    {field: 'name', title: '年级', width: 150},
+                    {field: 'name', title: '班级', width: 150},
+                    {field: 'gradeId', title: '年级', width: 150},
                     {field: 'remark', title: '备注', width: 300}
                 ]],
                 toolbar: "#toolbar"//工具栏
@@ -202,6 +203,7 @@
                 onBeforeOpen: function () {
                     var selectRow = $("#dataList").datagrid("getSelected");
                     $("#edit_id").val(selectRow.id);//需根据id更新用户信息
+                    $("#edit_clazzId").textbox('setValue', selectRow.clazzId);
                     $("#edit_name").textbox('setValue', selectRow.name);
                     $("#edit_remark").textbox('setValue', selectRow.remark);
                 }
@@ -233,11 +235,11 @@
     <div style="float: left;" class="datagrid-btn-separator"></div>
     <div style="float: left;"><a id="delete" href="javascript:" class="easyui-linkbutton"
                                  data-options="iconCls:'icon-some-delete',plain:true">删除</a></div>
-    <!-- 年级搜索域 -->
+    <!-- 班级搜索域 -->
     <div style="margin-left: 10px;">
         <div style="float: left;" class="datagrid-btn-separator"></div>
         <a id="edit" href="javascript:" class="easyui-linkbutton"
-           data-options="iconCls:'icon-user-teacher',plain:true">年级</a>
+           data-options="iconCls:'icon-user-teacher',plain:true">班级</a>
         <input id="search-name" class="easyui-textbox" name="name"/>
         <a id="search-btn" href="javascript:" class="easyui-linkbutton"
            data-options="iconCls:'icon-search',plain:true">搜索</a>
@@ -251,10 +253,21 @@
     <form id="addForm" method="post" action="#">
         <table id="addTable" border=0 style="width:200px; table-layout:fixed;" cellpad ding="6">
             <tr>
-                <td>年级</td>
+                <td>班级</td>
                 <td colspan="4">
                     <input id="add_name" style="width: 200px; height: 30px;" class="easyui-textbox"
                            type="text" name="name" data-options="required:true, missingMessage:'请填写年级~'"/>
+                </td>
+            </tr>
+            <tr>
+                <td>所属年级</td>
+                <td>
+                    <select id="add_gradeId" style="width: 200px; height: 30px;" class="easyui-checkbox" type="text"
+                            name="gradeId" data-options="required:true, missingMessage:'请选择所属年级~'">
+                        <c:forEach items="${gradeList}" var="temp">
+                            <option id="${temp.id}">${temp.name}</option>
+                        </c:forEach>
+                    </select>
                 </td>
             </tr>
             <tr>

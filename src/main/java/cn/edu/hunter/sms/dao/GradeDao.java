@@ -16,6 +16,12 @@ import java.util.Map;
 public interface GradeDao {
 
     /**
+     * 获取年级信息列表
+     * @return  List<Grade>
+     */
+    List<Grade> findAll();
+
+    /**
      * 修改年级信息
      * @param grade
      * @return

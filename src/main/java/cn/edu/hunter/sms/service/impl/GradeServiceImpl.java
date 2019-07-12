@@ -65,6 +65,15 @@ public class GradeServiceImpl implements GradeService {
     }
 
     /**
+     * 获取年级信息列表（无参数）
+     * @return
+     */
+    @Override
+    public List<Grade> findAll() {
+        return gradeDao.findAll();
+    }
+
+    /**
      * 查询年级列表
      *
      * @param queryMap

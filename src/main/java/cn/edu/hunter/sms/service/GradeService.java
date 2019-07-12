@@ -46,6 +46,12 @@ public interface GradeService {
 
     /**
      * 获取年级信息列表
+     * @return  List<Grade>
+     */
+    List<Grade> findAll();
+
+    /**
+     * 获取年级信息列表 (分页条件)
      *
      * @param queryMap
      * @return List<Grade>

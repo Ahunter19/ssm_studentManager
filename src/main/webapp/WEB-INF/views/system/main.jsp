@@ -76,7 +76,7 @@
                             "menuid": "23",
                             "menuname": "班级列表",
                             "icon": "icon-class",
-                            "url": "../clazz/goClazzListView"
+                            "url": "../clazz/list"
                         }
                     ]
                 },

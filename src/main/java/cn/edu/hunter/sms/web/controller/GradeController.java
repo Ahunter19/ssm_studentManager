@@ -3,6 +3,7 @@ package cn.edu.hunter.sms.web.controller;
 import cn.edu.hunter.sms.domain.Grade;
 import cn.edu.hunter.sms.domain.Page;
 import cn.edu.hunter.sms.service.GradeService;
+import cn.edu.hunter.sms.utils.StringUtil;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -31,6 +33,7 @@ public class GradeController {
 
     /**
      * 删除年级信息
+     *
      * @param ids
      * @return data
      */
@@ -39,15 +42,20 @@ public class GradeController {
     public Map<String, Object> deleteGrade(@RequestParam(value = "ids[]", required = false, defaultValue = "") Integer[] ids) {
         System.out.println("deleteGrade()方法执行了...");
         HashMap<String, Object> data = new HashMap<>();
-        String str = "";
-        for (Integer id : ids) {
-            str += id + ",";
-        }
-        String substring = str.substring(0, str.length() - 1);
-        System.out.println("id in :" + substring);
-        if (0 >= gradeService.deleteGrade(substring)) {
+        if (ids == null || ids.length == 0) {
             data.put("type", "error");
-            data.put("msg", "删除失败！");
+            data.put("msg", "请选择要删除的数据！");
+            return data;
+        }
+        try {
+            if (0 >= gradeService.deleteGrade(StringUtil.joinString(Arrays.asList(ids), ","))) {
+                data.put("type", "error");
+                data.put("msg", "删除失败！");
+                return data;
+            }
+        } catch (Exception e) {
+            data.put("type", "error");
+            data.put("msg", "该年级下存在班级信息，无法删除！");
             return data;
         }
         data.put("type", "success");
@@ -136,7 +144,6 @@ public class GradeController {
         queryMap.put("name", "%" + gradeName + "%");
         queryMap.put("offset", page.getOffset());
         queryMap.put("pageSize", page.getRows());
-        System.out.println("aa:" + gradeService.getGradeList(queryMap));
         ret.put("rows", gradeService.getGradeList(queryMap));
         ret.put("total", gradeService.getTotal(queryMap));
         return ret;
