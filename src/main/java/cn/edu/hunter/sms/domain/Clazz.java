@@ -1,5 +1,7 @@
 package cn.edu.hunter.sms.domain;
 
+import java.util.Objects;
+
 /**
  * @version 1.0.0
  * @description 班级实体类
@@ -55,5 +57,21 @@ public class Clazz {
                 ", remark='" + remark + '\'' +
                 ", gradeId=" + gradeId +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Clazz clazz = (Clazz) o;
+        return Objects.equals(id, clazz.id) &&
+                Objects.equals(name, clazz.name) &&
+                Objects.equals(remark, clazz.remark) &&
+                Objects.equals(gradeId, clazz.gradeId);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, remark, gradeId);
     }
 }

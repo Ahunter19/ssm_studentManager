@@ -107,7 +107,7 @@ public class GradeController {
         System.out.println(grade);
         if (StringUtils.isEmpty(grade.getName())) {
             data.put("type", "error");
-            data.put("msg", "年级不能为null");
+            data.put("msg", "年级不能为空");
             return data;
         }
         //查询年级是否重复

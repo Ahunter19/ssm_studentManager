@@ -17,7 +17,20 @@ import java.util.Map;
 public interface ClazzService {
 
     /**
+     * 查询班级名成是否存在
+     */
+    Clazz findClazzIfo(Clazz clazz);
+
+    Clazz findClazzById(Integer id);
+
+    /**
+     * 修改班级信息
+     */
+    int editClazz(Clazz clazz);
+
+    /**
      * 删除班级信息
+     *
      * @param ids
      * @return int
      */
@@ -37,6 +50,7 @@ public interface ClazzService {
 
     /**
      * 获取班级总页数
+     *
      * @param queryMap
      * @return
      */

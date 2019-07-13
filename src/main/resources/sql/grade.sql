@@ -1,37 +1,47 @@
 /*
-SQLyog Ultimate v12.08 (64 bit)
-MySQL - 8.0.16 : Database - sms
-*********************************************************************
-*/
+ Navicat Premium Data Transfer
 
-/*!40101 SET NAMES utf8 */;
+ Source Server         : edu
+ Source Server Type    : MySQL
+ Source Server Version : 80016
+ Source Host           : localhost:3306
+ Source Schema         : sms
 
-/*!40101 SET SQL_MODE=''*/;
+ Target Server Type    : MySQL
+ Target Server Version : 80016
+ File Encoding         : 65001
 
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-CREATE DATABASE /*!32312 IF NOT EXISTS*/`sms` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_bin */ /*!80016 DEFAULT ENCRYPTION='N' */;
+ Date: 13/07/2019 14:56:22
+*/
 
-USE `sms`;
+SET NAMES utf8mb4;
+SET FOREIGN_KEY_CHECKS = 0;
 
-/*Table structure for table `grade` */
-
+-- ----------------------------
+-- Table structure for grade
+-- ----------------------------
 DROP TABLE IF EXISTS `grade`;
-
-CREATE TABLE `grade` (
+CREATE TABLE `grade`  (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ID',
-  `name` varchar(255) COLLATE utf8_bin DEFAULT NULL COMMENT '年级',
-  `remark` varchar(255) COLLATE utf8_bin DEFAULT NULL COMMENT '备注',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+  `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT NULL COMMENT '年级',
+  `remark` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT NULL COMMENT '备注',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 27 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
 
-/*Data for the table `grade` */
+-- ----------------------------
+-- Records of grade
+-- ----------------------------
+INSERT INTO `grade` VALUES (1, '小学四年级', '小学四年级');
+INSERT INTO `grade` VALUES (8, '小学三年级', '小学三年级');
+INSERT INTO `grade` VALUES (17, '小学二年级', '小学一年级');
+INSERT INTO `grade` VALUES (18, '小学一年级', '小学一年级');
+INSERT INTO `grade` VALUES (19, '小学5年级', '小学5年级');
+INSERT INTO `grade` VALUES (20, '小学6年级', '小学6年级');
+INSERT INTO `grade` VALUES (21, '初中1年级', '初中1年级');
+INSERT INTO `grade` VALUES (22, '初中2年级', '初中2年级');
+INSERT INTO `grade` VALUES (23, '初中5年级', '初中5年级');
+INSERT INTO `grade` VALUES (24, '高中1年级', '高中1年级');
+INSERT INTO `grade` VALUES (25, '高中2年级', '高中2年级');
+INSERT INTO `grade` VALUES (26, '高中3年级', '高中3年级');
 
-insert  into `grade`(`id`,`name`,`remark`) values (4,'三年级','333'),(5,'初中四年级','88888'),(8,'初一','初一');
-
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+SET FOREIGN_KEY_CHECKS = 1;

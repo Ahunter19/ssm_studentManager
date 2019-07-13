@@ -22,6 +22,38 @@ public class ClazzServiceImpl implements ClazzService {
     @Autowired
     private ClazzDao clazzDao;
 
+    /**
+     * 根据班级名称和年级ID查询是否存在该班级
+     * @param clazz
+     * @return Clazz对象
+     */
+    @Override
+    public Clazz findClazzIfo(Clazz clazz) {
+        return clazzDao.findClazzIfo(clazz);
+    }
+
+    @Override
+    public Clazz findClazzById(Integer id) {
+        return clazzDao.findClazzById(id);
+    }
+
+    /**
+     * 修改班级信息
+     *
+     * @param clazz
+     * @return int
+     */
+    @Override
+    public int editClazz(Clazz clazz) {
+        return clazzDao.editClazz(clazz);
+    }
+
+    /**
+     * 删除、批量删除班级信息
+     *
+     * @param ids
+     * @return
+     */
     @Override
     public int deleteClazz(String ids) {
         return clazzDao.deleteClazz(ids);
@@ -29,6 +61,7 @@ public class ClazzServiceImpl implements ClazzService {
 
     /**
      * 添加班级信息
+     *
      * @param clazz
      * @return
      */
@@ -39,6 +72,7 @@ public class ClazzServiceImpl implements ClazzService {
 
     /**
      * 获取班级信息列表
+     *
      * @param queryMap
      * @return
      */

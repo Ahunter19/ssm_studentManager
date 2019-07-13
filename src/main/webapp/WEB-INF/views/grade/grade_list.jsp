@@ -99,7 +99,7 @@
                                         $("#dataList").datagrid("reload");//刷新表格
                                         $("#dataList").datagrid("uncheckAll");//取消勾选当前页所有的行
                                     } else {
-                                        $.messager.alert("消息提醒", "服务器端发生异常! 删除失败!", "warning");
+                                        $.messager.alert("消息提醒", data.msg, "warning");
                                     }
                                 }
                             });

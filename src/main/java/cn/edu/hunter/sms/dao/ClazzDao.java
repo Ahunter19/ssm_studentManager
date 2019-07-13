@@ -16,6 +16,18 @@ import java.util.Map;
 @Repository
 public interface ClazzDao {
 
+    /**\
+     * 查询班级名成是否存在
+     */
+    Clazz findClazzIfo(Clazz clazz);
+
+    Clazz findClazzById(Integer id);
+
+    /**
+     * 修改班级信息
+     */
+    int editClazz(Clazz clazz);
+
     /**
      * 删除班级信息
      * @param ids
