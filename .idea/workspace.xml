@@ -7,18 +7,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0ff8bc31-3e54-4862-a769-15f1c6d519d7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/edu/hunter/sms/dao/StudentDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/edu/hunter/sms/domain/Student.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/edu/hunter/sms/service/StudentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/edu/hunter/sms/service/impl/StudentServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/edu/hunter/sms/web/controller/StudentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mybatis/mapper/StudentMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/student/student_list.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/hunter/sms/dao/ClazzDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/hunter/sms/dao/ClazzDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/hunter/sms/domain/Clazz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/hunter/sms/domain/Clazz.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/hunter/sms/service/ClazzService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/hunter/sms/service/ClazzService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/hunter/sms/service/impl/ClazzServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/hunter/sms/service/impl/ClazzServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/hunter/sms/web/controller/ClazzController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/hunter/sms/web/controller/ClazzController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/hunter/sms/web/controller/GradeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/hunter/sms/web/controller/GradeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis/mapper/ClazzMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis/mapper/ClazzMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/clazz/clazz_list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/clazz/clazz_list.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/grade/grade_list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/grade/grade_list.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm_studentManager/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_studentManager/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/system/main.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/system/main.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sql/user.sql" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sql/user.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm_studentManager/WEB-INF/classes/sql/user.sql" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_studentManager/WEB-INF/classes/sql/user.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm_studentManager/WEB-INF/views/system/main.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_studentManager/WEB-INF/views/system/main.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -28,11 +28,145 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/student/student_list.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-993">
+              <caret line="287" column="27" lean-forward="true" selection-start-line="287" selection-start-column="27" selection-end-line="287" selection-end-column="27" />
+              <folding>
+                <element signature="n#style#0;n#table#0;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#td#1;n#tr#0;n#table#0;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#td#1;n#tr#0;n#table#0;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/hunter/sms/web/controller/StudentController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="405">
+              <caret line="58" column="9" lean-forward="true" selection-start-line="58" selection-start-column="9" selection-end-line="58" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/hunter/sms/dao/GradeDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="432">
+              <caret line="21" column="26" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="docComment;class#GradeDao#0" />
+                <element signature="docComment;method#editGrade#0;class#GradeDao#0" />
+                <element signature="docComment;method#deleteGrade#0;class#GradeDao#0" />
+                <element signature="docComment;method#addGrade#0;class#GradeDao#0" />
+                <element signature="docComment;method#findGradeByName#0;class#GradeDao#0" />
+                <element signature="docComment;method#getGradeList#0;class#GradeDao#0" />
+                <element signature="docComment;method#getTotal#0;class#GradeDao#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/hunter/sms/service/StudentService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="223">
+              <caret line="22" column="44" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="44" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="docComment;class#StudentService#0" />
+                <element signature="docComment;method#findAll#0;class#StudentService#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/hunter/sms/service/impl/StudentServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="378">
+              <caret line="40" column="57" selection-start-line="40" selection-start-column="57" selection-end-line="40" selection-end-column="57" />
+              <folding>
+                <element signature="docComment;class#StudentServiceImpl#0" />
+                <element signature="docComment;method#findAll#0;class#StudentServiceImpl#0" />
+                <element signature="docComment;method#getTotal#0;class#StudentServiceImpl#0" />
+                <element signature="e#967#968#0" expanded="true" />
+                <element signature="e#1019#1020#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/mapper/StudentMapper.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="243">
+              <caret line="9" column="40" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
+              <folding>
+                <marker date="1563080646841" expanded="true" signature="332:608" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/hunter/sms/web/controller/ClazzController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="439">
+              <caret line="171" column="46" selection-start-line="171" selection-start-column="46" selection-end-line="171" selection-end-column="46" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="docComment;class#ClazzController#0" />
+                <element signature="docComment;method#editClazz#0;class#ClazzController#0" />
+                <element signature="method#editClazz#0;class#ClazzController#0" />
+                <element signature="docComment;method#deleteClazz#0;class#ClazzController#0" />
+                <element signature="method#deleteClazz#0;class#ClazzController#0" />
+                <element signature="docComment;method#addClazz#0;class#ClazzController#0" />
+                <element signature="method#list#0;class#ClazzController#0" />
+                <element signature="docComment;method#getClazzList#0;class#ClazzController#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/hunter/sms/dao/StudentDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="216">
+              <caret line="14" column="3" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="docComment;class#StudentDao#0" />
+                <element signature="docComment;method#findAll#0;class#StudentDao#0" />
+                <element signature="docComment;method#getTotal#0;class#StudentDao#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -67,6 +201,7 @@
       <find>dataList</find>
       <find>editDialog</find>
       <find>add_gradeId</find>
+      <find>uploaded</find>
     </findStrings>
     <replaceStrings>
       <replace>年级</replace>
@@ -74,16 +209,15 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="home" />
+      </map>
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/errors/404.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/errors/500.jsp" />
-        <option value="$PROJECT_DIR$/src/main/resources/ log4j.properties" />
-        <option value="$PROJECT_DIR$/src/main/resources/db.properties" />
-        <option value="$PROJECT_DIR$/src/main/resources/jdbc/db.properties" />
-        <option value="$PROJECT_DIR$/src/main/resources/mybatis/mybatis-config.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/other/ log4j.properties" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/404.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/static/h-ui/js/H-ui.js" />
@@ -111,7 +245,6 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user/user_list.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/system/login.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/cn/edu/hunter/sms/utils/StringUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/system/main.jsp" />
         <option value="$PROJECT_DIR$/src/main/test/cn/edu/hunter/sms/testClazzList.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/edu/hunter/sms/service/GradeService.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/edu/hunter/sms/dao/GradeDao.java" />
@@ -127,6 +260,15 @@
         <option value="$PROJECT_DIR$/src/main/java/cn/edu/hunter/sms/web/controller/ClazzController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mybatis/mapper/ClazzMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/clazz/clazz_list.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/edu/hunter/sms/web/controller/StduentController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/edu/hunter/sms/domain/Student.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/system/main.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/edu/hunter/sms/service/StudentService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/edu/hunter/sms/service/impl/StudentServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/edu/hunter/sms/dao/StudentDao.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mybatis/mapper/StudentMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/edu/hunter/sms/web/controller/StudentController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/student/student_list.jsp" />
       </list>
     </option>
   </component>
@@ -146,8 +288,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1930" />
-    <option name="y" value="20" />
+    <option name="x" value="-54" />
+    <option name="y" value="33" />
     <option name="width" value="1920" />
     <option name="height" value="1040" />
   </component>
@@ -161,7 +303,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -282,47 +423,11 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="ssm_studentmanager" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ssm_studentmanager" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ssm_studentmanager" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ssm_studentmanager" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ssm_studentmanager" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ssm_studentmanager" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="clazz" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ssm_studentmanager" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ssm_studentmanager" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="grade" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -340,24 +445,24 @@
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="cn.edu.hunter.sms.dao" />
-      <recent name="cn.edu.hunter.sms.service.impl" />
-      <recent name="cn.edu.hunter.sms.service" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\project\git\ssm\ssm_studentmanager\src\main\resources\mybatis\mapper" />
-      <recent name="D:\project\git\ssm\ssm_studentmanager\src\main\webapp\WEB-INF\views\clazz" />
-      <recent name="D:\project\git\ssm\ssm_studentmanager\src\main\webapp\WEB-INF\views\user" />
-      <recent name="D:\project\git\ssm\ssm_studentmanager\src\main\webapp\WEB-INF\views\system" />
-      <recent name="D:\project\git\ssm\ssm_studentmanager\src\main\java\cn\edu\hunter\sms\utils" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\project\git\ssm\ssm_studentmanager\src\main\webapp\WEB-INF\views\errors" />
       <recent name="D:\project\git\ssm\ssm_studentmanager\src\main\resources\jdbc" />
       <recent name="D:\project\git\ssm\ssm_studentmanager\src\main\resources\other" />
       <recent name="D:\project\git\ssm\ssm_studentmanager\src\main\resources\springmvc" />
       <recent name="D:\project\git\ssm\ssm_studentmanager\src\main\resources\spring" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\project\git\ssm\ssm_studentmanager\src\main\resources\mybatis\mapper" />
+      <recent name="D:\project\git\ssm\ssm_studentmanager\src\main\webapp\WEB-INF\views\student" />
+      <recent name="D:\project\git\ssm\ssm_studentmanager\src\main\webapp\WEB-INF\views\clazz" />
+      <recent name="D:\project\git\ssm\ssm_studentmanager\src\main\webapp\WEB-INF\views\user" />
+      <recent name="D:\project\git\ssm\ssm_studentmanager\src\main\webapp\WEB-INF\views\system" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="cn.edu.hunter.sms.service.impl" />
+      <recent name="cn.edu.hunter.sms.dao" />
+      <recent name="cn.edu.hunter.sms.service" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -614,6 +719,8 @@
       <workItem from="1562828608456" duration="16321000" />
       <workItem from="1562904394367" duration="11447000" />
       <workItem from="1562924690001" duration="18916000" />
+      <workItem from="1563077200961" duration="4414000" />
+      <workItem from="1563078950835" duration="7143000" />
     </task>
     <task id="LOCAL-00001" summary="完成了年级信息管理界面设计及年级信息添加功、修改、批量删除、关键字模糊搜索功能">
       <created>1562845699842</created>
@@ -648,7 +755,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="131718000" />
+    <option name="totallyTimeSpent" value="143275000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -660,9 +767,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1912" y="-8" width="1936" height="1096" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18017058" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18336888" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -672,8 +780,8 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32827735" />
-      <window_info active="true" anchor="bottom" x="2438" y="198" width="1262" height="791" id="Run" order="2" sideWeight="0.8182303" visible="true" weight="0.2886812" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49946696" weight="0.34994808" />
+      <window_info anchor="bottom" x="2438" y="198" width="1262" height="791" id="Run" order="2" sideWeight="0.8182303" weight="0.22318527" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49946696" weight="0.06608884" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4989339" weight="0.32917964" />
@@ -754,66 +862,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="实现班级列表的界面设计&#10;添加班级表(grade.sql)" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/awt/Graphics.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="245" column="35" lean-forward="true" selection-start-line="245" selection-start-column="35" selection-end-line="245" selection-end-column="35" />
-          <folding>
-            <element signature="e#10030#10031#0" expanded="true" />
-            <element signature="e#10078#10079#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/hunter/sms/utils/CpachaUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1730">
-          <caret line="110" column="25" lean-forward="true" selection-start-line="110" selection-start-column="25" selection-end-line="110" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;class#CpachaUtil#0" />
-            <element signature="docComment;method#CpachaUtil#1;class#CpachaUtil#0" />
-            <element signature="docComment;method#CpachaUtil#2;class#CpachaUtil#0" />
-            <element signature="docComment;method#getVerifiCodeImage#0;class#CpachaUtil#0" />
-            <element signature="docComment;method#generatorRotateVCodeImage#0;class#CpachaUtil#0" />
-            <element signature="docComment;method#getRotateImage#0;class#CpachaUtil#0" />
-            <element signature="docComment;method#getRandomColor#0;class#CpachaUtil#0" />
-            <element signature="docComment;method#getTheta#0;class#CpachaUtil#0" />
-            <element signature="n#!!block;n#getTheta#0;n#CpachaUtil#0" />
-            <element signature="e#6479#6480#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/h-ui/js/H-ui.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2970">
-          <caret line="108" column="13" lean-forward="true" selection-start-line="107" selection-end-line="108" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/hello world.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/errors/404.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="6" column="16" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="389">
-          <caret line="84" selection-start-line="84" selection-start-column="4" selection-end-line="92" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/system/index.jsp" />
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/system/intro.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -943,26 +991,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/hunter/sms/domain/Page.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="40" selection-start-line="40" selection-end-line="40" />
-          <folding>
-            <element signature="docComment;class#Page#0" />
-            <element signature="e#292#293#0" expanded="true" />
-            <element signature="e#319#320#0" expanded="true" />
-            <element signature="e#356#357#0" expanded="true" />
-            <element signature="e#388#389#0" expanded="true" />
-            <element signature="e#416#417#0" expanded="true" />
-            <element signature="e#443#444#0" expanded="true" />
-            <element signature="e#480#481#0" expanded="true" />
-            <element signature="e#512#513#0" expanded="true" />
-            <element signature="e#542#543#0" expanded="true" />
-            <element signature="e#582#583#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/hunter/sms/web/controller/SystemController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="356">
@@ -1085,35 +1113,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/system/main.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="72" column="62" selection-start-line="72" selection-start-column="62" selection-end-line="72" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/test/cn/edu/hunter/sms/testClazzList.java" />
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.0.7.RELEASE/spring-web-5.0.7.RELEASE-sources.jar!/org/springframework/web/method/support/InvocableHandlerMethod.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="544">
           <caret line="217" selection-start-line="217" selection-end-line="217" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/hunter/sms/dao/GradeDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="21" column="26" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;class#GradeDao#0" />
-            <element signature="docComment;method#editGrade#0;class#GradeDao#0" />
-            <element signature="docComment;method#deleteGrade#0;class#GradeDao#0" />
-            <element signature="docComment;method#addGrade#0;class#GradeDao#0" />
-            <element signature="docComment;method#findGradeByName#0;class#GradeDao#0" />
-            <element signature="docComment;method#getGradeList#0;class#GradeDao#0" />
-            <element signature="docComment;method#getTotal#0;class#GradeDao#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1131,40 +1135,6 @@
             <element signature="e#1398#1399#0" expanded="true" />
             <element signature="docComment;method#getGradeList#0;class#GradeServiceImpl#0" />
             <element signature="docComment;method#getTotal#0;class#GradeServiceImpl#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/hunter/sms/service/GradeService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="37" column="31" lean-forward="true" selection-start-line="37" selection-start-column="31" selection-end-line="37" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;method#addGrade#0;class#GradeService#0" />
-            <element signature="docComment;method#deleteGrade#0;class#GradeService#0" />
-            <element signature="docComment;method#editGrade#0;class#GradeService#0" />
-            <element signature="docComment;method#findGradeByName#0;class#GradeService#0" />
-            <element signature="docComment;method#getGradeList#0;class#GradeService#0" />
-            <element signature="docComment;method#getTotal#0;class#GradeService#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/hunter/sms/web/controller/GradeController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-240">
-          <caret line="45" column="38" lean-forward="true" selection-start-line="45" selection-start-column="38" selection-end-line="45" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;class#GradeController#0" />
-            <element signature="docComment;method#deleteGrade#0;class#GradeController#0" />
-            <element signature="docComment;method#editGrade#0;class#GradeController#0" />
-            <element signature="docComment;method#addGrade#0;class#GradeController#0" />
-            <element signature="method#addGrade#0;class#GradeController#0" />
-            <element signature="docComment;method#getGradeList#0;class#GradeController#0" />
-            <element signature="docComment;method#list#0;class#GradeController#0" />
-            <element signature="method#list#0;class#GradeController#0" />
           </folding>
         </state>
       </provider>
@@ -1243,10 +1213,189 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/mapper/GradeMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="10" column="83" lean-forward="true" selection-start-line="10" selection-start-column="56" selection-end-line="10" selection-end-column="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/clazz/clazz_list.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6696">
+          <caret line="248" column="98" selection-start-line="248" selection-start-column="98" selection-end-line="248" selection-end-column="98" />
+          <folding>
+            <element signature="n#style#0;n#select#0;n#td#1;n#tr#1;n#table#0;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/hunter/sms/service/GradeService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="381">
+          <caret line="58" column="16" selection-start-line="58" selection-start-column="16" selection-end-line="58" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;method#addGrade#0;class#GradeService#0" />
+            <element signature="docComment;method#deleteGrade#0;class#GradeService#0" />
+            <element signature="docComment;method#editGrade#0;class#GradeService#0" />
+            <element signature="docComment;method#findGradeByName#0;class#GradeService#0" />
+            <element signature="docComment;method#getGradeList#0;class#GradeService#0" />
+            <element signature="docComment;method#getTotal#0;class#GradeService#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/hunter/sms/web/controller/GradeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="516">
+          <caret line="146" column="41" lean-forward="true" selection-start-line="146" selection-start-column="41" selection-end-line="146" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;class#GradeController#0" />
+            <element signature="docComment;method#deleteGrade#0;class#GradeController#0" />
+            <element signature="docComment;method#editGrade#0;class#GradeController#0" />
+            <element signature="docComment;method#addGrade#0;class#GradeController#0" />
+            <element signature="method#addGrade#0;class#GradeController#0" />
+            <element signature="docComment;method#getGradeList#0;class#GradeController#0" />
+            <element signature="docComment;method#list#0;class#GradeController#0" />
+            <element signature="method#list#0;class#GradeController#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/hunter/sms/domain/Student.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+          <folding>
+            <element signature="docComment;class#Student#0" />
+            <element signature="e#913#914#0" expanded="true" />
+            <element signature="e#938#939#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/hunter/sms/domain/Page.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="12" column="22" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="22" />
+          <folding>
+            <element signature="docComment;class#Page#0" />
+            <element signature="e#292#293#0" expanded="true" />
+            <element signature="e#319#320#0" expanded="true" />
+            <element signature="e#356#357#0" expanded="true" />
+            <element signature="e#388#389#0" expanded="true" />
+            <element signature="e#416#417#0" expanded="true" />
+            <element signature="e#443#444#0" expanded="true" />
+            <element signature="e#480#481#0" expanded="true" />
+            <element signature="e#512#513#0" expanded="true" />
+            <element signature="e#542#543#0" expanded="true" />
+            <element signature="e#582#583#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/system/main.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1269">
+          <caret line="47" column="47" selection-start-line="47" selection-start-column="47" selection-end-line="47" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/mapper/ClazzMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="17" column="13" lean-forward="true" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/hunter/sms/service/impl/StudentServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="40" column="57" selection-start-line="40" selection-start-column="57" selection-end-line="40" selection-end-column="57" />
+          <folding>
+            <element signature="docComment;class#StudentServiceImpl#0" />
+            <element signature="docComment;method#findAll#0;class#StudentServiceImpl#0" />
+            <element signature="docComment;method#getTotal#0;class#StudentServiceImpl#0" />
+            <element signature="e#967#968#0" expanded="true" />
+            <element signature="e#1019#1020#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/hunter/sms/service/ClazzService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="48" column="16" selection-start-line="48" selection-start-column="16" selection-end-line="48" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;class#ClazzService#0" />
+            <element signature="docComment;method#findClazzIfo#0;class#ClazzService#0" />
+            <element signature="docComment;method#deleteClazz#0;class#ClazzService#0" />
+            <element signature="docComment;method#addClazz#0;class#ClazzService#0" />
+            <element signature="docComment;method#findAllClazzList#0;class#ClazzService#0" />
+            <element signature="docComment;method#getClazzCount#0;class#ClazzService#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/hunter/sms/service/StudentService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="22" column="44" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;class#StudentService#0" />
+            <element signature="docComment;method#findAll#0;class#StudentService#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/hunter/sms/dao/GradeDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="21" column="26" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;class#GradeDao#0" />
+            <element signature="docComment;method#editGrade#0;class#GradeDao#0" />
+            <element signature="docComment;method#deleteGrade#0;class#GradeDao#0" />
+            <element signature="docComment;method#addGrade#0;class#GradeDao#0" />
+            <element signature="docComment;method#findGradeByName#0;class#GradeDao#0" />
+            <element signature="docComment;method#getGradeList#0;class#GradeDao#0" />
+            <element signature="docComment;method#getTotal#0;class#GradeDao#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/hunter/sms/dao/StudentDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="14" column="3" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;class#StudentDao#0" />
+            <element signature="docComment;method#findAll#0;class#StudentDao#0" />
+            <element signature="docComment;method#getTotal#0;class#StudentDao#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/mapper/StudentMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="9" column="40" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
+          <folding>
+            <marker date="1563080646841" expanded="true" signature="332:608" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/hunter/sms/web/controller/ClazzController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="473">
-          <caret line="171" column="46" lean-forward="true" selection-start-line="171" selection-start-column="46" selection-end-line="171" selection-end-column="46" />
+        <state relative-caret-position="439">
+          <caret line="171" column="46" selection-start-line="171" selection-start-column="46" selection-end-line="171" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;class#ClazzController#0" />
@@ -1261,42 +1410,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/mapper/GradeMapper.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/hunter/sms/web/controller/StudentController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="10" column="83" lean-forward="true" selection-start-line="10" selection-start-column="56" selection-end-line="10" selection-end-column="83" />
+        <state relative-caret-position="405">
+          <caret line="58" column="9" lean-forward="true" selection-start-line="58" selection-start-column="9" selection-end-line="58" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/hunter/sms/service/ClazzService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/student/student_list.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="443">
-          <caret line="48" column="16" selection-start-line="48" selection-start-column="16" selection-end-line="48" selection-end-column="16" />
+        <state relative-caret-position="-993">
+          <caret line="287" column="27" lean-forward="true" selection-start-line="287" selection-start-column="27" selection-end-line="287" selection-end-column="27" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;class#ClazzService#0" />
-            <element signature="docComment;method#findClazzIfo#0;class#ClazzService#0" />
-            <element signature="docComment;method#deleteClazz#0;class#ClazzService#0" />
-            <element signature="docComment;method#addClazz#0;class#ClazzService#0" />
-            <element signature="docComment;method#findAllClazzList#0;class#ClazzService#0" />
-            <element signature="docComment;method#getClazzCount#0;class#ClazzService#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/mapper/ClazzMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="12" column="13" lean-forward="true" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/clazz/clazz_list.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6696">
-          <caret line="248" column="98" selection-start-line="248" selection-start-column="98" selection-end-line="248" selection-end-column="98" />
-          <folding>
-            <element signature="n#style#0;n#select#0;n#td#1;n#tr#1;n#table#0;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#table#0;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#td#1;n#tr#0;n#table#0;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#td#1;n#tr#0;n#table#0;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

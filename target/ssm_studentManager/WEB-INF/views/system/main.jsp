@@ -26,24 +26,11 @@
 
     <!-- 页面事件 -->
     <script type="text/javascript">
-        //加载页面函数
-        $(function () {
-            // //消息推送窗口
-            // $.messager.show({
-            //     width: 360,
-            //     height: 50,
-            //     title: '推送',
-            //     msg: '很开心你能体现这个小小小项目哟 ! （づ￣3￣）づ╭❤～ ',
-            //     showSpeed: 1500,
-            //     timeout: 0,
-            //     showType: 'slide'
-            // });
-        });
         //设置系统功能菜单栏
         var _menus = {
             "menus": [
                 {
-                    "menuid": "1", "icon": "", "menuname": "学生信息管理",
+                    "menuid": "1", "icon": "", "menuname": "用户信息管理",
                     "menus": [
                         {
                             "menuid": "21",
@@ -53,22 +40,17 @@
                         }
                     ]
                 },
-<%--                &lt;%&ndash; 通过JSTL设置用户查看权限: 仅年级和教师可以查看教师列表信息 &ndash;%&gt;--%>
-<%--                <c:if test="${userType == 1 || userType == 3}">--%>
                 {
-                    "menuid": "2", "icon": "", "menuname": "教师信息管理",
+                    "menuid": "2", "icon": "", "menuname": "年级信息管理",
                     "menus": [
                         {
-                            "menuid": "22",
-                            "menuname": "教师列表",
-                            "icon": "icon-teacher",
-                            "url": "../teacher/goTeacherListView"
+                            "menuid": "24",
+                            "menuname": "年级列表",
+                            "icon": "icon-grade",
+                            "url": "../grade/list"
                         }
                     ]
                 },
-<%--                </c:if>--%>
-<%--                &lt;%&ndash; 通过JSTL设置用户查看权限:  仅年级可以查看年级,班级,年级列表信息 &ndash;%&gt;--%>
-<%--                <c:if test="${userType == 1}">--%>
                 {
                     "menuid": "3", "icon": "", "menuname": "班级信息管理",
                     "menus": [
@@ -81,39 +63,16 @@
                     ]
                 },
                 {
-                    "menuid": "4", "icon": "", "menuname": "年级信息管理",
+                    "menuid": "4", "icon": "", "menuname": "学生信息管理",
                     "menus": [
                         {
-                            "menuid": "24",
-                            "menuname": "年级列表",
-                            "icon": "icon-grade",
-                            "url": "../grade/list"
+                            "menuid": "22",
+                            "menuname": "学生列表",
+                            "icon": "icon-teacher",
+                            "url": "../student/goStudentView"
                         }
                     ]
                 },
-                {
-                    "menuid": "5", "icon": "", "menuname": "系统用户管理",
-                    "menus": [
-                        {
-                            "menuid": "25",
-                            "menuname": "年级列表",
-                            "icon": "icon-admin",
-                            "url": "../admin/goAdminListView"
-                        }
-                    ]
-                },
-<%--                </c:if>--%>
-                {
-                    "menuid": "6", "icon": "", "menuname": "个人信息管理",
-                    "menus": [
-                        {
-                            "menuid": "26",
-                            "menuname": "修改密码",
-                            "icon": "icon-settings",
-                            "url": "../common/goSettingView"
-                        }
-                    ]
-                }
             ]
         };
     </script>
