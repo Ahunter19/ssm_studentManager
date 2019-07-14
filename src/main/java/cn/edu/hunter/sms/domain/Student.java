@@ -12,11 +12,11 @@ import org.springframework.stereotype.Component;
 @Component
 public class Student {
     private Integer id;
-    private String name;
-    private String sex;
-    private String tel;
-    private String qq;
-    private Integer clazzId;
+    private String name;    //姓名
+    private String sex;     //性别
+    private String tel;     //电话
+    private String qq;      //QQ
+    private Integer clazzId;   //班级ID
 
     public Integer getId() {
         return id;
