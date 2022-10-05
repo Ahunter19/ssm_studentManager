@@ -30,7 +30,7 @@
     <jdtl.version>1.2</jdtl.version>
     <servlet.version>4.0.0</servlet.version>
     <commons-lang3.version>3.7</commons-lang3.version>
-    <jackson.version>2.9.5</jackson.version>
+    <jackson.version>2.12.6.1</jackson.version>
   </properties>
 
   <dependencies>
